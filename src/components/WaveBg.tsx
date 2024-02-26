@@ -97,7 +97,7 @@ export const WaveBg = ({
     return () => {
       cancelAnimationFrame(animationId);
     };
-  }, []);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <div
