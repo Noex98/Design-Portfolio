@@ -2,10 +2,22 @@ import Image from 'next/image'
 import React from 'react'
 import { client } from "@/utils/contentful"
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
+import { EntryFieldTypes } from 'contentful';
+
+type FrontPage = {
+  preHeadline: EntryFieldTypes.Text;
+  headline: EntryFieldTypes.Text;
+  subHeadline: EntryFieldTypes.RichText;
+}
+
+type FrontPageSkeleton = {
+  contentTypeId: 'frontPage';
+  fields: FrontPage;
+}
 
 export const Hero = async () => {
 
-  const res = await client.getEntry("4CgqhDFRpOOuzOpvzgEQjt");
+  const res = await client.getEntry<FrontPageSkeleton>('4CgqhDFRpOOuzOpvzgEQjt');
 
   return (
     <div className='h-screen flex items-center justify-center md:justify-between gap-16 flex-col md:flex-row'>
