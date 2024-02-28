@@ -1,13 +1,11 @@
 import { ProjectCard } from "@/components/ProjectCard";
 import { Hero } from "@/components/Hero";
 
-
 export default function RootPage() {
-    return (    
-        <main className="overflow-hidden w-sceen">
+    return (
+        <main className="w-sceen overflow-hidden">
             <Hero />
-            <div className="flex justify-evenly flex-wrap gap-3 overflow-hidden">
-
+            <div className="flex flex-wrap justify-evenly gap-3 overflow-hidden">
                 {/* 
                 <ProjectCard 
                     title="Project 1"
@@ -25,8 +23,7 @@ export default function RootPage() {
                     href="/3"
                 />
                 */}
-
             </div>
         </main>
-    )
+    );
 }
