@@ -21,3 +21,15 @@ export type FrontPageSkeleton = {
     contentTypeId: "frontPage";
     fields: FrontPage;
 };
+
+type Project = {
+    title: EntryFieldTypes.Text;
+    description: EntryFieldTypes.RichText;
+    assetUrl: EntryFieldTypes.Text;
+    slug: EntryFieldTypes.Text;
+};
+
+export type ProjectSkeleton = {
+    contentTypeId: "project";
+    fields: Project;
+};

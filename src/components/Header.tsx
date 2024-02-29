@@ -3,18 +3,26 @@ import { Drawer, DrawerContent, DrawerTitle, DrawerTrigger } from "./Drawer";
 import { CiMenuBurger } from "react-icons/ci";
 import { client } from "@/utils/contentful";
 import { GlobalSkeleton } from "@/types";
+import { cn } from "@/utils/cn";
 
-export const Header = async () => {
+export const Header = async ({ className }: { className?: string }) => {
     const { fields } = await client.getEntry<GlobalSkeleton>(
         "6lkt1semYwHrnDwiZXjVrq",
     );
 
     return (
         <>
-            <header className="left-6 right-6 top-0 flex items-center justify-between py-4 sm:fixed">
-                <h1 className="text-4xl font-bold">
-                    {fields.navigationHeadline}
-                </h1>
+            <header
+                className={cn(
+                    "left-6 right-6 top-0 flex items-center justify-between py-4",
+                    className,
+                )}
+            >
+                <Link href="/">
+                    <h1 className="text-4xl font-bold">
+                        {fields.navigationHeadline}
+                    </h1>
+                </Link>
 
                 <nav className="hidden md:block">
                     <ul className="flex max-w-xl flex-1 items-center justify-between gap-6">

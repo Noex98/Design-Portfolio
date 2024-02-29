@@ -28,7 +28,6 @@ export default function RootLayout({
         <html lang="en">
             <body className={clsx(inter.className)}>
                 <div className="px-6">
-                    <Header />
                     <WaveBg />
                     {children}
                 </div>
